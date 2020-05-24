@@ -1,11 +1,12 @@
 #!/usr/bin/python
 #
 # Multipool: Efficient multi-locus genetic mapping with pooled sequencing
-# 
+#
 # Matt Edwards
 # Copyright 2012 MIT
 # Released under the MIT license
 #
+# fmt: off
 
 import argparse, collections, sys, logging
 import numpy, scipy.stats
@@ -434,7 +435,7 @@ if __name__ == "__main__":
     print >>sys.stderr, "Scipy version:", scipy.__version__
     print >>sys.stderr, "Numpy version:", numpy.__version__
     if not args.noPlot:
-        import matplotlib
+        import matplotlib; matplotlib.use('agg')
         print >>sys.stderr, "Matplotlib version:", matplotlib.__version__
 
     N = args.N
